@@ -73,7 +73,7 @@ sudo sysctl -w net.ipv4.tcp_syn_retries=3
 # iptables rate limiting — allow 10 SYN/sec, drop the rest
 sudo iptables -A INPUT -p tcp --syn -m limit --limit 10/s --limit-burst 20 -j ACCEPT
 sudo iptables -A INPUT -p tcp --syn -j DROP
-
+```
 Known Limitations
 Slow SYN attacks evade detection — low rate stays below threshold. Mitigation: time-window analysis
 Zero baseline in isolated lab — no background traffic in controlled environment. Real deployment would learn from live traffic
