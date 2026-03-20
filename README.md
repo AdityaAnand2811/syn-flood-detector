@@ -58,7 +58,7 @@ If `SYN rate > 0` and `ESTAB/SYN < 0.3` → SYN flood suspected
 | Fail/sec | 27,700 | ~15 | 99.9% |
 | Cookie/sec | 25,217 | 0 | 100% |
 
-## System Hardening
+## 🛡️ System Hardening
 
 ```bash
 # Increase SYN backlog queue
@@ -74,16 +74,23 @@ sudo sysctl -w net.ipv4.tcp_syn_retries=3
 sudo iptables -A INPUT -p tcp --syn -m limit --limit 10/s --limit-burst 20 -j ACCEPT
 sudo iptables -A INPUT -p tcp --syn -j DROP
 ```
-Known Limitations
-Slow SYN attacks evade detection — low rate stays below threshold. Mitigation: time-window analysis
-Zero baseline in isolated lab — no background traffic in controlled environment. Real deployment would learn from live traffic
-Hardcoded poll interval — currently 1 second. Sub-second attacks may be partially missed
 
-Usage
+## ⚠️ Known Limitations
+
+- **Slow SYN attacks evade detection** — low rate stays below threshold. Mitigation: time-window analysis
+- **Zero baseline in isolated lab** — no background traffic in controlled environment. Real deployment would learn from live traffic
+- **Hardcoded poll interval** — currently 1 second. Sub-second attacks may be partially missed
+
+## 🚀 Usage
+
+```bash
 python3 telemetry_reader.py
+```
+
 Requires root or sudo for full /proc access on some systems.
 
-Requirements
-Python 3.x
-Linux system (reads from /proc filesystem)
-No external dependencies
+## 🛠️ Requirements
+
+- Python 3.x
+- Linux system (reads from /proc filesystem)
+- No external dependencies
