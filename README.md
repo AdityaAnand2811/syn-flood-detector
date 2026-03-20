@@ -75,13 +75,13 @@ sudo iptables -A INPUT -p tcp --syn -m limit --limit 10/s --limit-burst 20 -j AC
 sudo iptables -A INPUT -p tcp --syn -j DROP
 ```
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 - **Slow SYN attacks evade detection** — low rate stays below threshold. Mitigation: time-window analysis
 - **Zero baseline in isolated lab** — no background traffic in controlled environment. Real deployment would learn from live traffic
 - **Hardcoded poll interval** — currently 1 second. Sub-second attacks may be partially missed
 
-## 🚀 Usage
+## Usage
 
 ```bash
 python3 telemetry_reader.py
@@ -89,7 +89,7 @@ python3 telemetry_reader.py
 
 Requires root or sudo for full /proc access on some systems.
 
-## 🛠️ Requirements
+## Requirements
 
 - Python 3.x
 - Linux system (reads from /proc filesystem)
