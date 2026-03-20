@@ -58,7 +58,7 @@ If `SYN rate > 0` and `ESTAB/SYN < 0.3` → SYN flood suspected
 | Fail/sec | 27,700 | ~15 | 99.9% |
 | Cookie/sec | 25,217 | 0 | 100% |
 
-## 🛡️ System Hardening
+## System Hardening
 
 ```bash
 # Increase SYN backlog queue
