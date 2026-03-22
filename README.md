@@ -2,6 +2,8 @@
 
 A real-time SYN flood detection tool built in Python that reads live kernel telemetry from the Linux `/proc` filesystem to detect TCP-based DoS attacks without any external dependencies.
 
+**[📝 Read the full writeup on Hashnode](https://hacksandbytes.hashnode.dev/syn-flood-detection-engine)**
+
 ## Lab Environment
 
 | Component | Details |
